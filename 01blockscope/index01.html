@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <ul class="list">
+        <li>목록1</li>
+        <li>목록2</li>
+        <li>목록3</li>
+        <li>목록4</li>
+    </ul>
+    
+    <script>
+        var lis = document.querySelectorAll(".list li");
+
+        // //기억하자~~!!!!
+        // //var는 함수 스코프  
+        // for(var i = 0; i < lis.length; i++){ //중괄호 스코프가 적용되기 때문에 i가 4로 저장된 채로 이벤트 함수 내부에서 출력
+        //     lis[i].onclick=function() {
+        //         console.log(i);  //뭔가 이상하게 출력...? - 4만 출력
+        //     }
+        // }
+
+    //    //위의 문제 해결하는 방법 1 - 즉시 실행 함수
+    //     for(var i = 0; i < lis.length; i++){
+    //         (function(x){  //변수 스코프가 함수로 바뀜 
+    //             lis[x].onclick = function(){
+    //                 console.log(x);
+    //             }
+    //         })(i);
+    //     }
+
+
+        //해결 방법 2 - let 변수 
+        // let lis = document.querySelectorAll(".list li");
+        for(let i = 0; i < lis.length; i++){
+            lis[i].onclick = function() {
+                console.log(i); 
+            }
+        }
+
+    </script>
+
+
+    <script>
+
+        let x = 1;
+        //let x = 1; - 중복 선언 x
+
+        //let변수는 중괄호 스코프 
+        if(true){
+            let x = 10; 
+            console.log(x); //10 - 지역변수 
+        }
+
+        console.log(x); //지역변수 사용 불가, 전역변수 1 출력
+
+    </script>
+
+</body>
+</html>

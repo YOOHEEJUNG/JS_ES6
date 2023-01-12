@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        // 기존의 함수 모형
+        // var a = function(){
+        //     console.log("a실행");
+        // }
+
+        // a(); //익명함수 대체하는 거라 호이스팅 불가
+        
+        // 화살표 함수 모형 - 기본적으로 익명을 함수를 대체함
+        let a = () => {
+            console.log("a실행")
+        }
+        a();
+
+        /*
+           < 문법 1 >
+            코드가 한 줄이면 {}생략이 된다
+            중괄호{}를 생략하면 자동으로 return이 붙는다
+        */
+
+        let b1 = () => console.log("b실행"); // {} 생략
+        b1(); // return이 자동으로 생성(지금은 출력문이 있어서..)
+
+        let b2 = (a, b, c) => a + b + c;  // 출력문이 없는데 어떻게 출력..? 
+        console.log(b2(1, 2, 3));         // {}을 생략했기 때문에 자동으로 return이 생성
+
+        let b3 = (a=10) => a + 100;      // a는 기본값이 10 
+        console.log( b3() ); //110       // 👉 매개변수 없으면 a가 자동으로 10이 들어감
+        console.log( b3(20) ); //120     // 👉 매개변수 있어서 a에 20 들어감
+
+
+        /*
+            <문법 2> -  매개변수가 1개라면, ()생략이 된다
+        */
+
+        let c1 = a => a + 10;
+        console.log( c1(10) ); // 20
+
+
+        /*
+            <문법 3> - 객체를 반환할 때는 ()로 묶어준다
+        */
+
+        //1st
+        let c2 = () => {
+            return {key : 1, age : 20}
+        }; 
+
+        //2nd
+        let c3 = () => ({key:1, age:20}) // {}생략 가능 => return 생성
+
+        console.log( c3() ); //그래서 출력 가능
+
+        
+        setInterval(function(){
+            console.log(1);
+        }, 1000);
+
+        //setInterval(함수, number)를 화살표 함수로
+        setInterval(() => console.log(1), 1000); 
+       
+
+        
+        // let c = () => console.log(1);
+        // c(); //이렇게 하면 안 되는 이유는?
+
+
+    </script>
+
+</body>
+</html>
