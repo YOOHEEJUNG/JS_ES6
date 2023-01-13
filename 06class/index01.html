@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // Class에 대해 알아보자
+
+        class Person {
+            // 멤버변수 - 변수 키워드 쓰지 않아도 됨
+            name = "홍길동";
+            age = 20;
+            state = {subject : "JS"};
+        
+            //생성자는 자바스크립트에서 반드시 1개이다(중복 불가)
+            constructor(addr) {
+                //선언한 적 없지만 자동으로 addr이라는 멤버변수로 지칭
+                this.addr = addr;
+            }
+        
+            //함수
+            func = () => {
+                console.log("func실행");
+            }
+
+        }
+     
+        //객체로 생성 - 기본 생성자 없더라도 허용 👉 constructor(){};
+        let p = new Person();
+        console.log(p.name); // 멤버변수 접근
+        console.log(p.age);  // 멤버변수 접근
+        console.log(p.state.subject);  // 멤버변수 접근
+        p.func();  // 클래스 내 함수 접근
+
+        //
+         let p2 = new Person("서울");
+         console.log(p2.addr);
+
+
+
+    </script>
+</body>
+</html>
