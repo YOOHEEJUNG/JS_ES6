@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        // promise 객체 - 자바스크립트 내장객체(특별한 패턴을 제공해준다)
+    
+        //excutor라는 콜백함수를 전달 받고 excutor 첫번째는 성공시킬 함수, 실패일 때 실행시켜줄 함수 
+        var promise = new Promise(function(success, fail){
+           
+            //성공
+            // setTimeout(function() {
+            //     success("success"); //3초 이후 실행
+            // }, 3000);
+            
+            //실패
+            fail(new Error("에러남"));
+        })
+
+        // console.log(promise);   
+        promise.then(function(resoponse){
+            console.log(resoponse);
+        }).catch(function(err){
+            console.log(err);
+        })
+
+
+    </script>
+
+
+</body>
+</html>

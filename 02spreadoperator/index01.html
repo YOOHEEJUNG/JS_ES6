@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    
+
     <script>
 
         // 전개구문 - 반복이 가능한 요소에서만 사용가능
@@ -19,8 +21,14 @@
         console.log(...str);
         console.log([...str]);
 
+        var order="12345667"
+        var c = order.toString();
+        var newC = [...c];
+        console.log(newC);
+
+        
         //배열의 추가
-        let arr2 = [1, 2, 3, ...arr]; 
+        let arr2 = [1, 2, 3, ...arr];
         console.log(arr2); //[1, 2, 3, 1, 2, 3]
 
         //배열의 중간에 추가
@@ -39,4 +47,5 @@
     </script>
 
 </body>
+
 </html>
